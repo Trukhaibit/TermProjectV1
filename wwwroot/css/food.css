@@ -1,0 +1,34 @@
+﻿﻿body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: lightskyblue;
+    color: midnightblue;
+}
+
+h1, h2 {
+    color:midnightblue
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 10px black;
+    border-radius: 10px;
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.nav-link:hover {
+    color: cadetblue;
+    background-color: blueviolet;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: darkblue !important;
+}
