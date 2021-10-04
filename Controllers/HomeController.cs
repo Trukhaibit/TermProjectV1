@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using TermProjectV1.Models;
 
 namespace TermProjectV1.Controllers
@@ -13,9 +14,12 @@ namespace TermProjectV1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private RecommendContext context { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, RecommendContext ctx)
         {
             _logger = logger;
+            context = ctx;
         }
 
         public IActionResult Index()
@@ -36,6 +40,12 @@ namespace TermProjectV1.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Recommend()
+        {
+            var recommends = context.Recommends.OrderBy(r => r.Name).ToList();
+            return View(recommends);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

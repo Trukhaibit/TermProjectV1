@@ -1,0 +1,26 @@
+@model List<Recommend>
+@{
+    ViewData["Title"] = "Recommendations";
+}
+
+<h2>Recent Ratings from Our Other Website</h2>
+<table class="table table-bordered table-striped" style="background-color:cadetblue">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Food</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recommend in Model ?? new List<Recommend>())
+        {
+            <tr>
+                <td>@recommend.Name</td>
+                <td>@recommend.Food</td>
+                <td>@recommend.Rating</td>
+            </tr>
+        }
+    </tbody>
+</table> 

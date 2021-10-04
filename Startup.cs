@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TermProjectV1.Data;
+using TermProjectV1.Models;
 
 namespace TermProjectV1
 {
@@ -33,7 +34,8 @@ namespace TermProjectV1
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages(); services.AddDbContext<RecommendContext>(options => options.UseSqlServer(Configuration.GetConnectionString("RecommendContext")));
+            services.AddRouting(options => { options.LowercaseUrls = true; options.AppendTrailingSlash = true; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
