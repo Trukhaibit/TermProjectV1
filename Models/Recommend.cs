@@ -10,6 +10,11 @@ namespace TermProjectV1.Models
         [Required(ErrorMessage = "Please enter the food's name.")]
         public string Food { get; set; }
 
+        [Required(ErrorMessage = "Please pick an Allergen, (")]
+        public int AllergyId { get; set; }
+
+        public Allergy Allergy { get; set; }
+
         [Required(ErrorMessage = "Please enter your name.")]
         public string Name { get; set; }
 

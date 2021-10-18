@@ -44,8 +44,14 @@ namespace TermProjectV1.Controllers
 
         public IActionResult Recommend()
         {
-            var recommends = context.Recommends.OrderBy(r => r.Name).ToList();
+            var recommends = context.Recommends.Include(a => a.Allergy).OrderBy(r => r.Name).ToList();
             return View(recommends);
+        }
+
+        public IActionResult Allergy()
+        {
+            var allergies = context.Allergies.OrderBy(r => r.AllergyId).ToList();
+            return View(allergies);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

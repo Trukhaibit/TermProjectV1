@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TermProjectV1.Models;
 
 namespace TermProjectV1.Migrations
 {
     [DbContext(typeof(RecommendContext))]
-    partial class RecommendContextModelSnapshot : ModelSnapshot
+    [Migration("20211017235841_Secondary")]
+    partial class Secondary
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

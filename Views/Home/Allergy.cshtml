@@ -1,0 +1,23 @@
+@model List<Allergy>
+@{
+    ViewData["Title"] = "Allergy Guide";
+}
+
+<h2>Allergy Guide</h2>
+<table class="table table-bordered table-striped" style="background-color:cadetblue">
+    <thead>
+        <tr>
+            <th>Allergy</th>
+            <th>Examples</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var allergy in Model ?? new List<Allergy>())
+        {
+            <tr>
+                <td>@allergy.Allergen</td>
+                <td>@allergy.Examples</td>\
+            </tr>
+        }
+    </tbody>
+</table> 
