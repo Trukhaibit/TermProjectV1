@@ -7,6 +7,7 @@
 <table class="table table-bordered table-striped" style="background-color:cadetblue">
     <thead>
         <tr>
+            <th>Allergy Id</th>
             <th>Allergy</th>
             <th>Examples</th>
         </tr>
@@ -15,8 +16,9 @@
         @foreach (var allergy in Model ?? new List<Allergy>())
         {
             <tr>
+                <td>@allergy.AllergyId</td>
                 <td>@allergy.Allergen</td>
-                <td>@allergy.Examples</td>\
+                <td>@allergy.Examples</td>
             </tr>
         }
     </tbody>
